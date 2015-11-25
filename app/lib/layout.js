@@ -3,13 +3,14 @@ import { Container } from 'pixi.js';
 import Calendar from './calendar'
 
 class Layout extends Container {
-    constructor(scene) {
+    constructor(scene, data) {
 
         super();
 
         this.scene = scene;
+        this.data = data;
 
-        this.calendar = new Calendar(this.scene);
+        this.calendar = new Calendar(this.scene, this.data);
 
         this.addChild(this.calendar);
 

@@ -1,6 +1,6 @@
 {
-  "2012": {
-    "Janvier": {
+  "twelve": {
+    "january": {
       "Gobelins_viewed_pages": 184404,
       "Gobelins_vists": 54259,
       "Advertising": 4,
@@ -14,7 +14,7 @@
       "Youtube_subscribed": 14188,
       "Vimeo_views": null
     },
-    "Février": {
+    "february": {
       "Gobelins_viewed_pages": 169219,
       "Gobelins_vists": 50150,
       "Advertising": 2,
@@ -28,7 +28,7 @@
       "Youtube_subscribed": 15075,
       "Vimeo_views": null
     },
-    "Mars": {
+    "march": {
       "Gobelins_viewed_pages": 178967,
       "Gobelins_vists": 57427,
       "Advertising": 9,
@@ -42,7 +42,7 @@
       "Youtube_subscribed": 15625,
       "Vimeo_views": null
     },
-    "Avril": {
+    "april": {
       "Gobelins_viewed_pages": 146390,
       "Gobelins_vists": 43538,
       "Advertising": 0,
@@ -56,7 +56,7 @@
       "Youtube_subscribed": 16348,
       "Vimeo_views": null
     },
-    "Mai": {
+    "may": {
       "Gobelins_viewed_pages": 178894,
       "Gobelins_vists": 52,
       "Advertising": 3,
@@ -70,7 +70,7 @@
       "Youtube_subscribed": 16676,
       "Vimeo_views": null
     },
-    "Juin": {
+    "june": {
       "Gobelins_viewed_pages": 190411,
       "Gobelins_vists": 51,
       "Advertising": 1,
@@ -84,7 +84,7 @@
       "Youtube_subscribed": 16863,
       "Vimeo_views": null
     },
-    "Juillet": {
+    "july": {
       "Gobelins_viewed_pages": 126610,
       "Gobelins_vists": 35893,
       "Advertising": 0,
@@ -98,7 +98,7 @@
       "Youtube_subscribed": 17295,
       "Vimeo_views": null
     },
-    "Août": {
+    "august": {
       "Gobelins_viewed_pages": 96495,
       "Gobelins_vists": 27595,
       "Advertising": 0,
@@ -112,7 +112,7 @@
       "Youtube_subscribed": 17587,
       "Vimeo_views": null
     },
-    "Septembre": {
+    "september": {
       "Gobelins_viewed_pages": 148516,
       "Gobelins_vists": 46994,
       "Advertising": 1,
@@ -126,7 +126,7 @@
       "Youtube_subscribed": 17860,
       "Vimeo_views": null
     },
-    "Octobre": {
+    "october": {
       "Gobelins_viewed_pages": 144599,
       "Gobelins_vists": 47007,
       "Advertising": 1,
@@ -140,7 +140,7 @@
       "Youtube_subscribed": 22838,
       "Vimeo_views": null
     },
-    "Novembre": {
+    "november": {
       "Gobelins_viewed_pages": 159888,
       "Gobelins_vists": 49739,
       "Advertising": 1,
@@ -154,7 +154,7 @@
       "Youtube_subscribed": 23948,
       "Vimeo_views": null
     },
-    "Décembre": {
+    "december": {
       "Gobelins_viewed_pages": 133589,
       "Gobelins_vists": 40997,
       "Advertising": 0,
@@ -168,7 +168,7 @@
       "Youtube_subscribed": 25057,
       "Vimeo_views": null
     },
-    "Total_annee": {
+    "total_year": {
       "Gobelins_viewed_pages": 1857982,
       "Gobelins_vists": 557791,
       "Advertising": 22,
@@ -183,8 +183,8 @@
       "Vimeo_views": null
     }
   },
-  "2013": {
-    "Janvier": {
+  "thirteen": {
+    "january": {
       "Gobelins_viewed_pages": 258343,
       "Gobelins_vists": 64386,
       "Advertising": 2,
@@ -198,7 +198,7 @@
       "Youtube_subscribed": 25972,
       "Vimeo_views": null
     },
-    "Février": {
+    "february": {
       "Gobelins_viewed_pages": 255192,
       "Gobelins_vists": 67566,
       "Advertising": 4,
@@ -212,7 +212,7 @@
       "Youtube_subscribed": 27562,
       "Vimeo_views": null
     },
-    "Mars": {
+    "march": {
       "Gobelins_viewed_pages": 212747,
       "Gobelins_vists": 57928,
       "Advertising": 0,
@@ -226,7 +226,7 @@
       "Youtube_subscribed": 29742,
       "Vimeo_views": null
     },
-    "Avril": {
+    "april": {
       "Gobelins_viewed_pages": 205399,
       "Gobelins_vists": 56056,
       "Advertising": 0,
@@ -240,7 +240,7 @@
       "Youtube_subscribed": 29733,
       "Vimeo_views": 12707
     },
-    "Mai": {
+    "may": {
       "Gobelins_viewed_pages": 159945,
       "Gobelins_vists": 43498,
       "Advertising": 0,
@@ -254,7 +254,7 @@
       "Youtube_subscribed": 30548,
       "Vimeo_views": 25081
     },
-    "Juin": {
+    "june": {
       "Gobelins_viewed_pages": 210467,
       "Gobelins_vists": 53574,
       "Advertising": 0,
@@ -268,7 +268,7 @@
       "Youtube_subscribed": 31689,
       "Vimeo_views": 99481
     },
-    "Juillet": {
+    "july": {
       "Gobelins_viewed_pages": 194133,
       "Gobelins_vists": 34147,
       "Advertising": 0,
@@ -282,7 +282,7 @@
       "Youtube_subscribed": 32374,
       "Vimeo_views": 28539
     },
-    "Août": {
+    "august": {
       "Gobelins_viewed_pages": 203540,
       "Gobelins_vists": 27170,
       "Advertising": 0,
@@ -296,7 +296,7 @@
       "Youtube_subscribed": 32936,
       "Vimeo_views": 9150
     },
-    "Septembre": {
+    "september": {
       "Gobelins_viewed_pages": 368005,
       "Gobelins_vists": 47407,
       "Advertising": 0,
@@ -310,7 +310,7 @@
       "Youtube_subscribed": 38875,
       "Vimeo_views": 456717
     },
-    "Octobre": {
+    "october": {
       "Gobelins_viewed_pages": 313779,
       "Gobelins_vists": 41304,
       "Advertising": 0,
@@ -324,7 +324,7 @@
       "Youtube_subscribed": 41616,
       "Vimeo_views": 61533
     },
-    "Novembre": {
+    "november": {
       "Gobelins_viewed_pages": 304188,
       "Gobelins_vists": 39313,
       "Advertising": 1,
@@ -338,7 +338,7 @@
       "Youtube_subscribed": 43241,
       "Vimeo_views": 35513
     },
-    "Décembre": {
+    "december": {
       "Gobelins_viewed_pages": 294249,
       "Gobelins_vists": 37794,
       "Advertising": null,
@@ -352,7 +352,7 @@
       "Youtube_subscribed": 45293,
       "Vimeo_views": 36353
     },
-    "Total_annee": {
+    "total_year": {
       "Gobelins_viewed_pages": 2979987,
       "Gobelins_vists": 570143,
       "Advertising": 7,
@@ -367,8 +367,8 @@
       "Vimeo_views": 765074
     }
   },
-  "2014": {
-    "Janvier": {
+  "fourteen": {
+    "january": {
       "Gobelins_viewed_pages": 466668,
       "Gobelins_vists": 57430,
       "Advertising": 2,
@@ -382,7 +382,7 @@
       "Youtube_subscribed": 46201,
       "Vimeo_views": 22207
     },
-    "Février": {
+    "february": {
       "Gobelins_viewed_pages": 472623,
       "Gobelins_vists": 58713,
       "Advertising": 0,
@@ -396,7 +396,7 @@
       "Youtube_subscribed": 47213,
       "Vimeo_views": 17328
     },
-    "Mars": {
+    "march": {
       "Gobelins_viewed_pages": 405810,
       "Gobelins_vists": 52639,
       "Advertising": 0,
@@ -410,7 +410,7 @@
       "Youtube_subscribed": 48450,
       "Vimeo_views": 18542
     },
-    "Avril": {
+    "april": {
       "Gobelins_viewed_pages": 332735,
       "Gobelins_vists": 32635,
       "Advertising": 0,
@@ -424,7 +424,7 @@
       "Youtube_subscribed": 49626,
       "Vimeo_views": 27718
     },
-    "Mai": {
+    "may": {
       "Gobelins_viewed_pages": 359203,
       "Gobelins_vists": 34496,
       "Advertising": 0,
@@ -438,7 +438,7 @@
       "Youtube_subscribed": 50689,
       "Vimeo_views": 36428
     },
-    "Juin": {
+    "june": {
       "Gobelins_viewed_pages": 153656,
       "Gobelins_vists": 30754,
       "Advertising": 1,
@@ -452,7 +452,7 @@
       "Youtube_subscribed": 54188,
       "Vimeo_views": 162302
     },
-    "Juillet": {
+    "july": {
       "Gobelins_viewed_pages": 0,
       "Gobelins_vists": 0,
       "Advertising": 0,
@@ -466,7 +466,7 @@
       "Youtube_subscribed": 0,
       "Vimeo_views": 0
     },
-    "Août": {
+    "august": {
       "Gobelins_viewed_pages": 0,
       "Gobelins_vists": 0,
       "Advertising": 0,
@@ -480,7 +480,7 @@
       "Youtube_subscribed": 0,
       "Vimeo_views": 0
     },
-    "Septembre": {
+    "september": {
       "Gobelins_viewed_pages": 0,
       "Gobelins_vists": 0,
       "Advertising": 0,
@@ -494,7 +494,7 @@
       "Youtube_subscribed": 0,
       "Vimeo_views": 0
     },
-    "Octobre": {
+    "october": {
       "Gobelins_viewed_pages": 0,
       "Gobelins_vists": 0,
       "Advertising": 0,
@@ -508,7 +508,7 @@
       "Youtube_subscribed": 0,
       "Vimeo_views": 0
     },
-    "Novembre": {
+    "november": {
       "Gobelins_viewed_pages": 0,
       "Gobelins_vists": 0,
       "Advertising": 0,
@@ -522,7 +522,7 @@
       "Youtube_subscribed": 0,
       "Vimeo_views": 0
     },
-    "Décembre": {
+    "december": {
       "Gobelins_viewed_pages": 0,
       "Gobelins_vists": 0,
       "Advertising": 0,
@@ -536,7 +536,7 @@
       "Youtube_subscribed": 0,
       "Vimeo_views": 0
     },
-    "Total_annee": {
+    "total_year": {
       "Gobelins_viewed_pages": 2190695,
       "Gobelins_vists": 266667,
       "Advertising": 3,

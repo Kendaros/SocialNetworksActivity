@@ -3,11 +3,14 @@ import { Graphics } from 'pixi.js';
 import Particle from './particle'
 
 class Calendar extends Graphics {
-    constructor(scene) {
+    constructor(scene, data) {
 
         super();
 
         this.scene = scene;
+        this.data = data;
+
+        console.log(this.data);
         this.radius = window.innerHeight/3;
         //this.radius = 200;
 
@@ -34,7 +37,9 @@ class Calendar extends Graphics {
 
 
 
-            this.nbPoints = Math.random()*200;
+
+
+            this.nbPoints = this.data.thirteen["january"].Facebook_fans / 1000;
 
             for (var j = 0; j < this.nbPoints; j++) {
                 var options = {

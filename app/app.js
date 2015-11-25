@@ -2,6 +2,7 @@ import Dat from 'dat-gui';
 import Scene from './scene/scene';
 import { Graphics } from 'pixi.js';
 import NumberUtils from './utils/number-utils';
+import EventEmitter from './lib/event-emitter'
 
 import Layout from './lib/layout'
 import Particle from './lib/particle'
@@ -9,6 +10,16 @@ import Particle from './lib/particle'
 class App {
 
     constructor() {
+
+
+
+        this.getJSON();
+
+        EventEmitter.on('JSON_LOADED', this.onJsonLoaded.bind(this));
+
+    }
+
+    onJsonLoaded() {
 
         this.DELTA_TIME = 0;
         this.LAST_TIME = Date.now();
@@ -19,7 +30,6 @@ class App {
         root.appendChild(this.scene.renderer.view);
 
         this.drawLayout();
-        //this.drawParticles();
 
         this.addListeners();
 
@@ -58,16 +68,22 @@ class App {
     }
 
     drawLayout() {
-        this.layout = new Layout(this.scene);
+        this.layout = new Layout(this.scene, this.data);
         this.scene.addChild(this.layout);
     }
 
-    //drawParticles() {
-    //    this.particle = new Particle({50, 50});
-    //    this.scene.addChild(this.particle);
-    //
-    //}
+    getJSON() {
 
+        var req = new XMLHttpRequest();
+        req.open("GET", "assets/data.json", true);
+        req.onreadystatechange = function() {
+            if (req.readyState == 4) {
+                this.data = JSON.parse(req.responseText);
+                EventEmitter.emit("JSON_LOADED");
+            }
+        }.bind(this);
+        req.send(null);
+    }
 
     /**
      * onResize
