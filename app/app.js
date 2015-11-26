@@ -29,6 +29,7 @@ class App {
         root.appendChild(this.scene.renderer.view);
 
         this.drawLayout();
+        //TweenMax.fromTo(this.layout.calendar, 1, {y: -1000}, {y: 0});
 
         this.addListeners();
 

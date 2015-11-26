@@ -1,6 +1,7 @@
 import { Container } from 'pixi.js';
 
 import Calendar from './calendar'
+import Chrono from './chrono'
 
 class Layout extends Container {
     constructor(scene, data) {
@@ -36,7 +37,7 @@ class Layout extends Container {
 
         //this.hitArea = new PIXI.Polygon(path);
 
-        this.drawAreas();
+        //this.drawAreas();
 
     }
 
@@ -46,7 +47,7 @@ class Layout extends Container {
 
     drawAreas() {
 
-        for (var i = 0; i < 2; i++) {
+        for (var i = 0; i < 36; i++) {
 
             this.area = new PIXI.Graphics();
 
@@ -64,8 +65,15 @@ class Layout extends Container {
                 new PIXI.Point(Math.sin(-(i+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight - (4.5*this.layer)),  Math.cos(-(i+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight - (4.5*this.layer)))
             ];
 
+        //var i = 0;
+
             this.area.beginFill(0xFFFFFF);
             this.area.lineStyle(2, 0xFFFFFF);
+
+            var x0 = Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius - this.barHeight);
+            var y0 = Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight - (4.5*this.layer));
+            //var x0 = 0;
+            //var y0 = 0;
 
             var x1 = Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140);
             var y1 = Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140);
@@ -74,10 +82,10 @@ class Layout extends Container {
             var x3 = Math.sin(-(i+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight - (4.5*this.layer));
             var y3 = Math.cos(-(i+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight - (4.5*this.layer));
 
-            this.area.moveTo(Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140), Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight - (4.5*this.layer)));
+            this.area.moveTo(x0, y0);
             this.area.lineTo(x1, y1);
             this.area.lineTo(x2, y2);
-            //this.area.lineTo(x3, y3);
+            this.area.lineTo(x3, y3);
 
 
             this.area.interactive = true;
