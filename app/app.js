@@ -12,8 +12,6 @@ class App {
 
     constructor() {
 
-
-
         this.getJSON();
 
         EventEmitter.on('JSON_LOADED', this.onJsonLoaded.bind(this));
@@ -70,8 +68,9 @@ class App {
         this.DELTA_TIME = Date.now() - this.LAST_TIME;
         this.LAST_TIME = Date.now();
 
-        this.scene.render();
+        this.layout.update();
 
+        this.scene.render();
 
     }
 

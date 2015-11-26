@@ -10,16 +10,19 @@ class Layout extends Container {
         this.scene = scene;
         this.data = data;
 
-        this.calendar = new Calendar(this.scene, this.data);
+        this.x = window.innerWidth / 2;
+        this.y = window.innerHeight / 2;
+
+        console.log(this);
+
+        this.calendar = new Calendar(this, this.data);
 
         this.addChild(this.calendar);
 
     }
 
-    move(dt, speed, scale) {
-        for (let j = 0; j < this.stars.length; j++) {
-            this.stars[j].move(dt, speed, scale);
-        }
+    update() {
+        this.calendar.move();
     }
 
 }

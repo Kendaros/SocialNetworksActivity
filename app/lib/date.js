@@ -7,8 +7,8 @@ class Date extends Text {
         super(Text);
 
         this.text = options.text;
-        this.x = window.innerWidth/2;
-        this.y = window.innerHeight/2;
+        this.x = 0;
+        this.y = 0;
 
         console.log(this.x);
 

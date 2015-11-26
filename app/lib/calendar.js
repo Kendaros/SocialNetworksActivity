@@ -23,10 +23,8 @@ class Calendar extends Graphics {
         //this.drawCircle(0, 0, this.radius - 20);
         //this.y = window.innerHeight + this.radius/2;
 
-
-
-        this.y = window.innerHeight / 2;
-        this.x = window.innerWidth / 2;
+        //this.y = window.innerHeight / 2;
+        //this.x = window.innerWidth / 2;
 
         this.layer = 20;
 
@@ -69,7 +67,7 @@ class Calendar extends Graphics {
 
         var outer = 140;
 
-        for (var i = 0; i < this.nb; i++) {
+        for (var i = 0; i < this.nb - 5; i++) {
             if(i == 0 || i == 12 || i == 24) {
                 this.lineStyle(2, 0xFFFFFF);
                 this.barHeight = 30;
@@ -84,7 +82,7 @@ class Calendar extends Graphics {
 
             if(i == 0) {
                 var options = {
-                    text: "2015   ][   2012",
+                    text: "2012",
                     x: Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + outer),
                     y: Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + outer),
                     rotation: 0
@@ -152,7 +150,7 @@ class Calendar extends Graphics {
                 };
 
                 var particle = new Particle(options);
-                this.scene.addChild(particle);
+                this.addChild(particle);
 
             }
             step += 1;
@@ -177,7 +175,7 @@ class Calendar extends Graphics {
                 };
 
                 var particle = new Particle(options);
-                this.scene.addChild(particle);
+                this.addChild(particle);
 
             }
             step += 1;
@@ -201,7 +199,7 @@ class Calendar extends Graphics {
                     };
 
                     var particle = new Particle(options);
-                    this.scene.addChild(particle);
+                    this.addChild(particle);
 
                 }
                 step += 1;
@@ -224,7 +222,7 @@ class Calendar extends Graphics {
                     };
 
                     var particle = new Particle(options);
-                    this.scene.addChild(particle);
+                    this.addChild(particle);
 
                 }
                 step += 1;
@@ -239,22 +237,18 @@ class Calendar extends Graphics {
         this.arc(0, 0, this.radius + 90, Math.PI/6, Math.PI/2 + 2*Math.PI/6);
 
         this.lineStyle(4.64, 0xFFFFFF);
-        this.arc(0, 0, this.radius + 100, Math.PI/2 + 2*Math.PI/6, -Math.PI/2);
+        this.arc(0, 0, this.radius + 100, Math.PI/2 + 2*Math.PI/6, -Math.PI + Math.PI/6);
 
     }
 
     writeDate(options) {
         this.text = new Date(options);
-        this.scene.addChild(this.text);
+        this.addChild(this.text);
     }
 
 
-
-
-    move(dt, speed, scale) {
-        for (let j = 0; j < this.stars.length; j++) {
-            this.stars[j].move(dt, speed, scale);
-        }
+    move() {
+        this.rotation -= 0.0005;
     }
 
 }
