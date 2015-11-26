@@ -3,6 +3,32 @@
 	padding: 0;
 }
 
+body {
+    font-family: Helvetica, Arial;
+}
+
 audio {
   /*display: none;*/
+}
+
+#legend {
+	height: 250px;
+	width: 250px;
+	background-color: #232323;
+	position: relative;
+	z-index:99;
+
+	text-align: left;
+    font-size: 15px;
+}
+
+#legend ul{
+
+    margin-left: 40px;
+    color: white;
+}
+
+#legend ul li{
+    padding-top:20px;
+    list-style-type: none;
 }

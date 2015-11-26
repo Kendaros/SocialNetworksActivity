@@ -1,6 +1,7 @@
-import { Graphics } from 'pixi.js';
+import { Graphics, Text } from 'pixi.js';
 
 import Particle from './particle'
+import Date from './date'
 
 class Calendar extends Graphics {
     constructor(scene, data) {
@@ -15,12 +16,15 @@ class Calendar extends Graphics {
         this.youtubeArray = [];
         this.vimeoArray = [];
 
-        this.radius = window.innerHeight/3;
+        this.radius = window.innerHeight/3.5;
 
-        this.lineStyle(2, 0xFFFFFF);
+
         //this.drawCircle(0, 0, this.radius);
         //this.drawCircle(0, 0, this.radius - 20);
         //this.y = window.innerHeight + this.radius/2;
+
+
+
         this.y = window.innerHeight / 2;
         this.x = window.innerWidth / 2;
 
@@ -49,6 +53,7 @@ class Calendar extends Graphics {
 
         this.nb = 12*3;
 
+        this.drawCandidates();
         this.drawChrono();
 
         this.getData();
@@ -62,7 +67,7 @@ class Calendar extends Graphics {
 
     drawChrono() {
 
-        var outer = 20;
+        var outer = 140;
 
         for (var i = 0; i < this.nb; i++) {
             if(i == 0 || i == 12 || i == 24) {
@@ -73,8 +78,40 @@ class Calendar extends Graphics {
                 this.lineStyle(0.5, 0xFFFFFF);
                 this.barHeight = 10;
             }
+
             this.moveTo(Math.sin(-i * (Math.PI * 2)/this.nb + Math.PI) * (this.radius + outer), Math.cos(-i * (Math.PI * 2)/this.nb + Math.PI) * (this.radius + outer));
             this.lineTo(Math.sin(-i * (Math.PI * 2)/this.nb + Math.PI) * (this.radius + this.barHeight + outer), Math.cos(-i * (Math.PI * 2)/this.nb + Math.PI) * (this.radius + this.barHeight + outer));
+
+            if(i == 0) {
+                var options = {
+                    text: "2012",
+                    x: Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + outer),
+                    y: Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + outer),
+                    rotation: 0
+                };
+
+                this.writeDate(options);
+            }
+            if(i == 12) {
+                var options = {
+                    text: "2013",
+                    x: Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + outer),
+                    y: Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + outer),
+                    rotation: Math.PI * 2/3
+                };
+
+                this.writeDate(options);
+            }
+            if(i == 24) {
+                var options = {
+                    text: "2014",
+                    x: Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + outer),
+                    y: Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + outer),
+                    rotation: Math.PI + Math.PI/3
+                };
+
+                this.writeDate(options);
+            }
 
         }
     }
@@ -122,7 +159,6 @@ class Calendar extends Graphics {
         }
 
     }
-
     drawVimeo() {
 
         var step = 0;
@@ -137,7 +173,7 @@ class Calendar extends Graphics {
 
                     x: Math.sin(-(j) *(Math.PI * 2) / ((this.nb*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (1.5*this.layer) - Math.random()*20) + this.x,
                     y: Math.cos(-(j) *(Math.PI * 2) / ((this.nb*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (1.5*this.layer) - Math.random()*20) + this.y,
-                    color: 0x59defd
+                    color: 0x00f3e8
                 };
 
                 var particle = new Particle(options);
@@ -148,7 +184,6 @@ class Calendar extends Graphics {
         }
 
     }
-
     drawFacebook() {
         var step = 0;
 
@@ -162,7 +197,7 @@ class Calendar extends Graphics {
 
                         x: Math.sin(-(j) *(Math.PI * 2) / ((this.nb*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (3*this.layer) - Math.random()*20) + this.x,
                         y: Math.cos(-(j) *(Math.PI * 2) / ((this.nb*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (3*this.layer) - Math.random()*20) + this.y,
-                        color: 0x2a4291
+                        color: 0xf800ff
                     };
 
                     var particle = new Particle(options);
@@ -172,7 +207,6 @@ class Calendar extends Graphics {
                 step += 1;
             }
     }
-
     drawTwitter() {
         var step = 0;
 
@@ -186,7 +220,7 @@ class Calendar extends Graphics {
 
                         x: Math.sin(-(j) *(Math.PI * 2) / ((this.nb*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (4.5*this.layer) - Math.random()*20) + this.x,
                         y: Math.cos(-(j) *(Math.PI * 2) / ((this.nb*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (4.5*this.layer) - Math.random()*20) + this.y,
-                        color: 0x0083ff
+                        color: 0x6f00ff
                     };
 
                     var particle = new Particle(options);
@@ -196,6 +230,25 @@ class Calendar extends Graphics {
                 step += 1;
             }
     }
+    drawCandidates() {
+
+        this.lineStyle(1.81, 0xFFFFFF);
+        this.arc(0, 0, this.radius + 80, -Math.PI/2, Math.PI/6);
+
+        this.lineStyle(2.89, 0xFFFFFF);
+        this.arc(0, 0, this.radius + 90, Math.PI/6, Math.PI/2 + 2*Math.PI/6);
+
+        this.lineStyle(4.64, 0xFFFFFF);
+        this.arc(0, 0, this.radius + 100, Math.PI/2 + 2*Math.PI/6, -Math.PI/2);
+
+    }
+
+    writeDate(options) {
+        this.text = new Date(options);
+        this.scene.addChild(this.text);
+    }
+
+
 
 
     move(dt, speed, scale) {
