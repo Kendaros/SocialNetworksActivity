@@ -51,7 +51,6 @@ class App {
         TweenMax.ticker.addEventListener('tick', this.update.bind(this))
 
         $("#button").on('click', function() {
-            console.log("booh");
             $('#text').slideToggle(function(){
                 //$(this).css({"top",20});
             });
@@ -68,7 +67,7 @@ class App {
         this.DELTA_TIME = Date.now() - this.LAST_TIME;
         this.LAST_TIME = Date.now();
 
-        this.layout.update();
+        //this.layout.update();
 
         this.scene.render();
 
@@ -103,7 +102,6 @@ class App {
         this.height = window.innerHeight;
 
         this.scene.resize(this.width, this.height);
-
 
     }
 

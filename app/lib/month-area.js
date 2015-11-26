@@ -1,9 +1,9 @@
-import { Graphics, Text } from 'pixi.js';
+import { Graphics } from 'pixi.js';
 
 import Particle from './particle'
 import Date from './date'
 
-class Calendar extends Graphics {
+class MonthArea extends Graphics {
     constructor(scene, data) {
 
         super();
@@ -11,28 +11,6 @@ class Calendar extends Graphics {
         this.scene = scene;
         this.data = data;
         this.interactive = true;
-
-        var index = 0;
-
-        //var path = [
-        //    new PIXI.Point(0,0),
-        //    new PIXI.Point(Math.sin(-index * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140), Math.cos(-index * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140)),
-        //    new PIXI.Point(Math.sin(-(index+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140), Math.cos(-(index+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140)),
-        //    new PIXI.Point(0, 0)
-        //];
-        //
-        ////var path = [
-        ////    new PIXI.Point(0, 0),
-        ////    new PIXI.Point(1000, 0),
-        ////    new PIXI.Point(0, 1000),
-        ////    new PIXI.Point(0, 0)
-        ////];
-        //
-        //this.hitArea = new PIXI.Polygon(path);
-
-        this.mouseout = function(mouseData){
-            console.log("MOUSE CLICK ");
-        };
 
         this.facebookArray = [];
         this.twitterArray = [];
@@ -84,6 +62,10 @@ class Calendar extends Graphics {
         this.drawFacebook();
         this.drawTwitter();
 
+        this.beginFill(0xFFFFFF);
+        //this.drawPolygon(0, Math.sin(-1 * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140), Math.cos(-1 * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140));
+        this.drawPolygon([new PIXI.Point(0,0), new PIXI.Point(Math.sin(-0 * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140), Math.cos(-0 * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140)), new PIXI.Point(Math.sin(-1 * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140), Math.cos(-1 * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140)), new PIXI.Point(0, 0) ]);
+        //this.addChild(this.polygon);
 
     }
 
@@ -100,8 +82,6 @@ class Calendar extends Graphics {
                 this.lineStyle(0.5, 0xFFFFFF);
                 this.barHeight = 10;
             }
-
-            //this.drawArea(i);
 
             this.moveTo(Math.sin(-i * (Math.PI * 2)/this.nb + Math.PI) * (this.radius + outer), Math.cos(-i * (Math.PI * 2)/this.nb + Math.PI) * (this.radius + outer));
             this.lineTo(Math.sin(-i * (Math.PI * 2)/this.nb + Math.PI) * (this.radius + this.barHeight + outer), Math.cos(-i * (Math.PI * 2)/this.nb + Math.PI) * (this.radius + this.barHeight + outer));
@@ -145,13 +125,13 @@ class Calendar extends Graphics {
             for (var m = 0; m < this.months.length; m++) {
                 this.nbPoints = this.data[this.years[y]][this.months[m]].Facebook_fans / 100;
                 this.facebookArray.push(this.nbPoints);
-                
+
                 this.nbPoints = this.data[this.years[y]][this.months[m]].Twitter_followers / 100;
                 this.twitterArray.push(this.nbPoints);
-                
+
                 this.nbPoints = this.data[this.years[y]][this.months[m]].Youtube_views / 1000;
                 this.youtubeArray.push(this.nbPoints);
-                
+
                 this.nbPoints = this.data[this.years[y]][this.months[m]].Vimeo_views / 1000;
                 this.vimeoArray.push(this.nbPoints);
             }
@@ -211,48 +191,48 @@ class Calendar extends Graphics {
     drawFacebook() {
         var step = 0;
 
-            for (var k = 0; k < this.facebookArray.length; k++) {
+        for (var k = 0; k < this.facebookArray.length; k++) {
 
-                this.nbPoints = this.facebookArray[k];
+            this.nbPoints = this.facebookArray[k];
 
-                for (var j = 0; j < this.nbPoints; j++) {
+            for (var j = 0; j < this.nbPoints; j++) {
 
-                    var options = {
+                var options = {
 
-                        x: Math.sin(-(j) *(Math.PI * 2) / ((this.nb*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (3*this.layer) - Math.random()*20) + this.x,
-                        y: Math.cos(-(j) *(Math.PI * 2) / ((this.nb*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (3*this.layer) - Math.random()*20) + this.y,
-                        color: 0xf800ff
-                    };
+                    x: Math.sin(-(j) *(Math.PI * 2) / ((this.nb*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (3*this.layer) - Math.random()*20) + this.x,
+                    y: Math.cos(-(j) *(Math.PI * 2) / ((this.nb*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (3*this.layer) - Math.random()*20) + this.y,
+                    color: 0xf800ff
+                };
 
-                    var particle = new Particle(options);
-                    this.addChild(particle);
+                var particle = new Particle(options);
+                this.addChild(particle);
 
-                }
-                step += 1;
             }
+            step += 1;
+        }
     }
     drawTwitter() {
         var step = 0;
 
-            for (var k = 0; k < this.twitterArray.length; k++) {
+        for (var k = 0; k < this.twitterArray.length; k++) {
 
-                this.nbPoints = this.twitterArray[k];
+            this.nbPoints = this.twitterArray[k];
 
-                for (var j = 0; j < this.nbPoints; j++) {
+            for (var j = 0; j < this.nbPoints; j++) {
 
-                    var options = {
+                var options = {
 
-                        x: Math.sin(-(j) *(Math.PI * 2) / ((this.nb*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (4.5*this.layer) - Math.random()*20) + this.x,
-                        y: Math.cos(-(j) *(Math.PI * 2) / ((this.nb*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (4.5*this.layer) - Math.random()*20) + this.y,
-                        color: 0x6f00ff
-                    };
+                    x: Math.sin(-(j) *(Math.PI * 2) / ((this.nb*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (4.5*this.layer) - Math.random()*20) + this.x,
+                    y: Math.cos(-(j) *(Math.PI * 2) / ((this.nb*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (4.5*this.layer) - Math.random()*20) + this.y,
+                    color: 0x6f00ff
+                };
 
-                    var particle = new Particle(options);
-                    this.addChild(particle);
+                var particle = new Particle(options);
+                this.addChild(particle);
 
-                }
-                step += 1;
             }
+            step += 1;
+        }
     }
     drawCandidates() {
 
@@ -264,29 +244,6 @@ class Calendar extends Graphics {
 
         this.lineStyle(3, 0xFFFFFF);
         this.arc(0, 0, this.radius + 60+283/8, Math.PI/2 + 2*Math.PI/6, -Math.PI + Math.PI/6);
-
-    }
-
-    drawArea(index) {
-
-        if(index <= 29) {
-            var path = [
-                new PIXI.Point(0,0),
-                new PIXI.Point(Math.sin(-index * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140), Math.cos(-index * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140)),
-                new PIXI.Point(Math.sin(-(index+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140), Math.cos(-(index+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140)),
-                new PIXI.Point(0, 0)
-            ];
-
-            this.drawPolygon(path);
-
-            //this.hitArea = new PIXI.Polygon(path);
-            //this.interactive = true;
-            //
-            //this.touchmove = function(mouseData){
-            //    console.log("MOUSE CLICK ");
-            //}
-        }
-
 
     }
 

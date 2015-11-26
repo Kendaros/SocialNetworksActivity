@@ -10,8 +10,6 @@ class Date extends Text {
         this.x = 0;
         this.y = 0;
 
-        console.log(this.x);
-
         this.anchor.x = 0.5;
         this.anchor.y = 0.5;
 

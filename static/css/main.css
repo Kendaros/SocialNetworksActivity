@@ -9,6 +9,9 @@ body {
 
 #legend {
 
+    display: inline-block;
+    width:250px;
+
 	position: relative;
 	z-index:99;
 
