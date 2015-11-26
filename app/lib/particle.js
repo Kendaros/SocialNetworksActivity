@@ -11,15 +11,17 @@ class Particle extends Sprite {
         this.y = options.y;
 
         this.scale = {
-            x: 1/4,
-            y: 1/4
+            x: 1/8,
+            y: 1/8
         };
+
+        this.alpha = 0.6;
 
         this.anchor.x = 0.5;
         this.anchor.y = 0.5;
 
         this.tint = options.color; // 0x111111
-        this.blendMode = BLEND_MODES.ADD;
+        this.blendMode = BLEND_MODES.OVERLAY;
 
         //this.beginFill(0xFFFFFF);
         //this.drawCircle(0, 0, 50);
