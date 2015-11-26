@@ -230,14 +230,14 @@ class Calendar extends Graphics {
     }
     drawCandidates() {
 
-        this.lineStyle(1.81, 0xFFFFFF);
-        this.arc(0, 0, this.radius + 80, -Math.PI/2, Math.PI/6);
+        this.lineStyle(3, 0xFFFFFF);
+        this.arc(0, 0, this.radius + 60, -Math.PI/2, Math.PI/6);
 
-        this.lineStyle(2.89, 0xFFFFFF);
-        this.arc(0, 0, this.radius + 90, Math.PI/6, Math.PI/2 + 2*Math.PI/6);
+        this.lineStyle(3, 0xFFFFFF);
+        this.arc(0, 0, this.radius + 60+108/8, Math.PI/6, Math.PI/2 + 2*Math.PI/6);
 
-        this.lineStyle(4.64, 0xFFFFFF);
-        this.arc(0, 0, this.radius + 100, Math.PI/2 + 2*Math.PI/6, -Math.PI + Math.PI/6);
+        this.lineStyle(3, 0xFFFFFF);
+        this.arc(0, 0, this.radius + 60+283/8, Math.PI/2 + 2*Math.PI/6, -Math.PI + Math.PI/6);
 
     }
 
