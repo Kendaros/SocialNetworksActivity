@@ -12,14 +12,20 @@ audio {
 }
 
 #legend {
-	height: 250px;
-	width: 250px;
-	background-color: #232323;
+
 	position: relative;
 	z-index:99;
 
 	text-align: left;
     font-size: 15px;
+
+    margin-left: 40px;
+}
+
+#legend #text {
+    height: 250px;
+    width: 250px;
+    background-color: #232323;
 }
 
 #legend ul{
@@ -31,4 +37,51 @@ audio {
 #legend ul li{
     padding-top:20px;
     list-style-type: none;
+    padding-left: 10px;
+    margin-left: 5px;
+}
+
+#legend ul li:nth-child(1) {
+    list-style-image: url('../assets/img/1_dotRed.png');
+}
+
+#legend ul li:nth-child(2) {
+    list-style-image: url('../assets/img/2_dotTurquoise.png');
+}
+
+#legend ul li:nth-child(3) {
+    list-style-image: url('../assets/img/3_dotPink.png');
+}
+
+#legend ul li:nth-child(4) {
+    list-style-image: url('../assets/img/4_dotViolet.png');
+}
+
+#legend ul li:nth-child(5) {
+    background: url('../assets/img/5_stripes.png') no-repeat 0px 3px;
+    padding: 0 0 0 30px;
+    margin-top: 30px;
+    margin-left: -15px;
+}
+
+#legend #button {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #232323;
+    transform: translateY(60%);
+    bottom: 0;
+    left: 95px;
+    -webkit-border-radius: 0 0 100% 100%;
+    -moz-border-radius: 0 0 100% 100%;
+    border-radius: 0 0 100% 100%;
+    color: #494949;
+
+    cursor: pointer;
+}
+
+#legend span {
+    position: relative;
+    top: 30px;
+    left: 19px;
 }

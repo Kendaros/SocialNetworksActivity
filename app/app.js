@@ -3,6 +3,7 @@ import Scene from './scene/scene';
 import { Graphics } from 'pixi.js';
 import NumberUtils from './utils/number-utils';
 import EventEmitter from './lib/event-emitter'
+import $ from 'jquery'
 
 import Layout from './lib/layout'
 import Particle from './lib/particle'
@@ -50,6 +51,13 @@ class App {
 
         window.addEventListener('resize', this.onResize.bind(this));
         TweenMax.ticker.addEventListener('tick', this.update.bind(this))
+
+        $("#button").on('click', function() {
+            console.log("booh");
+            $('#text').slideToggle(function(){
+                //$(this).css({"top",20});
+            });
+        });
 
     }
 
