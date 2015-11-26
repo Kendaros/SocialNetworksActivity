@@ -84,7 +84,7 @@ class Calendar extends Graphics {
 
             if(i == 0) {
                 var options = {
-                    text: "2012",
+                    text: "2015   ][   2012",
                     x: Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + outer),
                     y: Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + outer),
                     rotation: 0

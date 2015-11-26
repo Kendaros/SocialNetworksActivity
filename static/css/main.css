@@ -7,10 +7,6 @@ body {
     font-family: Helvetica, Arial;
 }
 
-audio {
-  /*display: none;*/
-}
-
 #legend {
 
 	position: relative;
@@ -23,6 +19,10 @@ audio {
 }
 
 #legend #text {
+
+    position: relative;
+    z-index:99;
+
     height: 250px;
     width: 250px;
     background-color: #232323;
@@ -78,6 +78,8 @@ audio {
     color: #494949;
 
     cursor: pointer;
+
+    z-index:1;
 }
 
 #legend span {
