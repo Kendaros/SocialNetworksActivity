@@ -14,8 +14,10 @@ class App {
 
         this.getJSON();
 
-        $('#begin').on('click', function(){
-            $('#intro').fadeOut();
+        this.isReady = false;
+
+        $('#begin').on('click', function () {
+            $('#intro').fadeOut(1000);
             EventEmitter.emit('BEGIN');
         });
 
@@ -25,39 +27,43 @@ class App {
     }
 
     onBegin() {
-        
-        var tl = new TimelineMax();
-        tl.fromTo(this.layout.calendar.chrono, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john")
-            .fromTo(this.layout.calendar.candidates, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john+=0.5")
-            .fromTo(this.layout.calendar.youtube, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john+=1")
-            .fromTo(this.layout.calendar.vimeo, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john+=1.5")
-            .fromTo(this.layout.calendar.facebook, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john+=2")
-            .fromTo(this.layout.calendar.twitter, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john+=2.5")
-            .fromTo($('#legend'), 1, {y: -250}, {y: 0, ease: Power4.easeOut});
+
+        if (this.isReady) {
+            this.DELTA_TIME = 0;
+            this.LAST_TIME = Date.now();
+
+            this.scene = new Scene();
+
+            let root = document.body.querySelector('.app');
+            root.appendChild(this.scene.renderer.view);
+
+            this.drawLayout();
+
+            this.addListeners();
+
+            this.options = {
+                x: window.innerWidth / 2,
+                y: window.innerHeight / 2
+            };
+
+            var tl = new TimelineMax();
+            tl.fromTo(this.layout.calendar.chrono, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john")
+                .fromTo(this.layout.calendar.candidates, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john+=0.5")
+                .fromTo($('#legend'), 1, {y: -250}, {y: 0, ease: Power4.easeOut});
+
+            this.layout.calendar.youtube.moveFromAbove();
+            this.layout.calendar.vimeo.moveFromAbove();
+            this.layout.calendar.twitter.moveFromAbove();
+            this.layout.calendar.facebook.moveFromAbove();
+        }
+        else {
+            window.setTimeout(this.onBegin, 400).bind(this);
+        }
+
     }
 
     onJsonLoaded() {
-
-        this.DELTA_TIME = 0;
-        this.LAST_TIME = Date.now();
-
-        this.scene = new Scene();
-
-        let root = document.body.querySelector('.app');
-        root.appendChild(this.scene.renderer.view);
-
-        this.drawLayout();
-
-        this.addListeners();
-
-        this.options = {
-            x: window.innerWidth/2,
-            y: window.innerHeight/2
-        };
-
-        this.particle = new Particle(this.options);
-        this.scene.addChild(this.particle);
-
+        this.isReady = true;
     }
 
     /**
@@ -68,10 +74,8 @@ class App {
         window.addEventListener('resize', this.onResize.bind(this));
         TweenMax.ticker.addEventListener('tick', this.update.bind(this))
 
-        $("#button").on('click', function() {
-            $('#text').slideToggle(function(){
-                //$(this).css({"top",20});
-            });
+        $("#button").on('click', function () {
+            $('#text').slideToggle();
         });
 
     }
@@ -100,7 +104,7 @@ class App {
 
         var req = new XMLHttpRequest();
         req.open("GET", "assets/data.json", true);
-        req.onreadystatechange = function() {
+        req.onreadystatechange = function () {
             if (req.readyState == 4) {
                 this.data = JSON.parse(req.responseText);
                 EventEmitter.emit("JSON_LOADED");

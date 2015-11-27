@@ -13,6 +13,8 @@ class Vimeo extends Graphics {
         this.radius = options.radius;
         this.layer = options.layer;
 
+        this.particles = [];
+
         var step = 0;
 
         for (var k = 0; k < this.vimeoArray.length; k++) {
@@ -30,11 +32,18 @@ class Vimeo extends Graphics {
 
                 var particle = new Particle(options);
                 this.addChild(particle);
+                this.particles.push(particle);
 
             }
             step += 1;
         }
 
+    }
+
+    moveFromAbove() {
+        for (let i = 0; i < this.particles.length; i++) {
+            TweenMax.fromTo(this.particles[i], Math.random()*3 + 4, {y: -1000}, {y: this.particles[i].y, ease: Power4.easeOut})
+        }
     }
 }
 

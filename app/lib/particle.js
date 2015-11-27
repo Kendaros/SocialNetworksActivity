@@ -24,32 +24,6 @@ class Particle extends Sprite {
         this.blendMode = BLEND_MODES.OVERLAY;
 
     }
-
-    move(dt){
-        this.x += Math.sin(this.angle * Math.PI/180) * this.vx;
-        this.y += Math.cos(this.angle * Math.PI/180) * this.vy;
-        if(this.life <= 100){
-            this.alpha = (this.life/100);
-        }
-        this.life -= dt;
-
-
-        if(this.life <= 0){
-            this.isAlive = false;
-        }
-    }
-
-    reset(options) {
-        this.x = options.x;
-        this.y = options.y;
-        this.scale.factor = Math.random() * 1.2;
-        this.scale.x = this.scale.factor;
-        this.scale.y = this.scale.factor;
-        this.life = Math.random()*2000 + 1000;
-        this.alpha = 1;
-
-        this.isAlive = true;
-    }
 }
 
 export default Particle

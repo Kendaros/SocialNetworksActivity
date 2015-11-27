@@ -39,6 +39,12 @@ class Twitter extends Graphics {
         }
 
     }
+
+    moveFromAbove() {
+        for (let i = 0; i < this.particles.length; i++) {
+            TweenMax.fromTo(this.particles[i], Math.random()*3 + 12, {y: -1000}, {y: this.particles[i].y, ease: Power4.easeOut})
+        }
+    }
 }
 
 export default Twitter
