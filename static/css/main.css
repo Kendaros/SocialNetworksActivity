@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: Helvetica, Arial;
+    font-family: "interstate_lightcondensedRg", Helvetica, Arial;
 }
 
 #intro {
@@ -18,17 +18,22 @@ body {
 }
 
 #intro h1 {
-    font-family: "amplitudecondmedium", Helvetica;
+    font-family: "bebas_neue_regularregular", Helvetica;
+    font-weight: normal;
+    letter-spacing: 1px;
     font-size: 5em;
 }
 
 #intro h2 {
-    font-family: "amplitudecond_lightregular", Helvetica;
+    margin-top: 25px;
+    font-family: "interstate_thincondensedRg", Helvetica;
+
+    font-weight: lighter;
     font-size: 2em;
 }
 
 #intro #begin {
-    font-family: "amplitudecondmedium", Helvetica;
+    font-family: "interstate_lightcondensedRg", Helvetica;
     position: relative;
     top: 45%;
 
@@ -43,9 +48,9 @@ body {
     font-size: 1.3em;
     color: #3E3E3E;
     background: #232323;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
 
 
     transition: all ease 0.5s;
@@ -82,7 +87,7 @@ body {
     position: relative;
     z-index:99;
 
-    font-family: "amplitudemedium", Helvetica;
+    font-family: "interstate_lightcondensedRg", Helvetica;
 
     height: 250px;
 
@@ -93,6 +98,7 @@ body {
 #legend ul{
 
     margin-left: 40px;
+    padding-top: 20px;
     color: white;
 }
 
@@ -124,6 +130,7 @@ body {
     padding: 0 0 0 30px;
     margin-top: 30px;
     margin-left: -15px;
+    line-height: 30px;
 }
 
 #legend #button {
@@ -140,7 +147,7 @@ body {
     border-radius: 0 0 100% 100%;
     color: #494949;
 
-    font-family: "amplitudecondmedium", Helvetica;
+    font-family: "interstate_lightcondensedRg", Helvetica;
 
     cursor: pointer;
 
@@ -152,4 +159,24 @@ body {
     position: relative;
     top: 30px;
     left: 21px;
+}
+
+#stats {
+    color: #FFF;
+    position: absolute;
+    z-index: 99999;
+
+    width: 100%;
+
+    right: 0;
+    bottom: 50px;
+}
+
+#stats table td{
+    width: 140px;
+}
+
+.align-right {
+    text-align: right;
+    padding-right: 20px;
 }

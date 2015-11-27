@@ -1,5 +1,7 @@
 import { Container, Text } from 'pixi.js';
 
+import $ from 'jquery'
+
 import Particle from './particle'
 import Date from './date'
 import Chrono from './chrono'
@@ -195,18 +197,64 @@ class Calendar extends Container {
 
     drawAreas() {
 
+        this.monthsForArea = [
+            "january",
+            "february",
+            "march",
+            "april",
+            "may",
+            "june",
+            "july",
+            "august",
+            "september",
+            "october",
+            "november",
+            "december",
+            "january",
+            "february",
+            "march",
+            "april",
+            "may",
+            "june",
+            "july",
+            "august",
+            "september",
+            "october",
+            "november",
+            "december",
+            "january",
+            "february",
+            "march",
+            "april",
+            "may",
+            "june",
+            "july",
+            "august",
+            "september",
+            "october",
+            "november",
+            "december",
+        ];
+
         for (var i = 0; i < this.nbMonths - 6; i++) {
 
             this.area = new PIXI.Graphics();
 
-            this.area.facebookArray = this.facebookArray;
-            this.area.twitterArray = this.twitterArray;
-            this.area.youtubeArray = this.youtubeArray;
-            this.area.vimeoArray = this.vimeoArray;
+            //this.area.facebookArray = this.facebookArray;
+            //this.area.twitterArray = this.twitterArray;
+            //this.area.youtubeArray = this.youtubeArray;
+            //this.area.vimeoArray = this.vimeoArray;
+
+            this.area.facebook = Math.floor(this.facebookArray[i] * 100);
+            this.area.twitter = Math.floor(this.twitterArray[i] * 100);
+            this.area.youtube = Math.floor(this.youtubeArray[i] * 1000);
+            this.area.vimeo = Math.floor(this.vimeoArray[i] * 1000);
+
+            this.area.month = this.monthsForArea[i].toUpperCase();
 
             this.area.alpha = 0;
 
-            this.radius = window.innerHeight/3.5 + 50;
+            this.radius = window.innerHeight/3.5 + 40;
             this.barHeight = 30;
 
             //var path = [
@@ -249,8 +297,13 @@ class Calendar extends Container {
             this.area.hitArea = new PIXI.Polygon(path);
             this.area.mouseover = function(mouseData){
                 this.alpha = 0.1;
-                //console.log(this.facebookArray[0]);
+                $('#month').html(this.month);
+                $('#youtube').html(this.youtube);
+                $('#vimeo').html(this.vimeo);
+                $('#facebook').html(this.facebook);
+                $('#twitter').html(this.twitter);
             };
+
             this.area.mouseout = function(mouseData){
                 this.alpha = 0;
                 //console.log(this.facebookArray[0]);
