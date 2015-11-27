@@ -47,6 +47,15 @@ body {
     -moz-border-radius: 5px;
     border-radius: 5px;
 
+
+    transition: all ease 0.5s;
+
+}
+
+
+#intro #begin:hover {
+    color: #FFFFFF;
+    background: #5D5D5D;
 }
 
 #intro #title {
@@ -135,6 +144,7 @@ body {
     cursor: pointer;
 
     z-index:1;
+
 }
 
 #legend span {
