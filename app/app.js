@@ -25,7 +25,7 @@ class App {
     }
 
     onBegin() {
-        ‡
+        
         var tl = new TimelineMax();
         tl.fromTo(this.layout.calendar.chrono, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john")
             .fromTo(this.layout.calendar.candidates, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john+=0.5")
