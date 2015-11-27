@@ -21,6 +21,8 @@ class Calendar extends Container {
         this.data = data;
         this.interactive = true;
 
+        this.pause = false;
+
         this.facebookArray = [];
         this.twitterArray = [];
         this.youtubeArray = [];
@@ -290,13 +292,23 @@ class Calendar extends Container {
             this.area.mouseout = function(mouseData){
                 this.alpha = 0;
             };
+            this.area.click = function(mouseData) {
+                if(!this.pause){
+                    this.pause = true;
+                }
+                else {
+                    this.pause = false;
+                }
+            }.bind(this);
             this.addChild(this.area);
         }
 
     }
 
     move() {
-        this.rotation -= 0.0005;
+        if(!this.pause) {
+            this.rotation -= 0.0005;
+        }
     }
 
 }

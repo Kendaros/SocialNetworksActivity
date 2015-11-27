@@ -166,7 +166,7 @@ body {
     position: absolute;
     z-index: 99;
 
-    width: 100%;
+    /*width: 100%;*/
 
     right: 0;
     bottom: 50px;
