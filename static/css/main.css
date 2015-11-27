@@ -7,6 +7,53 @@ body {
     font-family: Helvetica, Arial;
 }
 
+#intro {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    z-index: 999999;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#intro h1 {
+    font-family: "amplitudecondmedium", Helvetica;
+    font-size: 5em;
+}
+
+#intro h2 {
+    font-family: "amplitudecond_lightregular", Helvetica;
+    font-size: 2em;
+}
+
+#intro #begin {
+    font-family: "amplitudecondmedium", Helvetica;
+    position: relative;
+    top: 45%;
+
+    display: block;
+    margin: 0 auto;
+    height: 30px;
+    line-height: 30px;
+    width: 100px;
+
+    cursor: pointer;
+
+    font-size: 1.3em;
+    color: #3E3E3E;
+    background: #232323;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+
+#intro #title {
+    position: relative;
+    top: 35%;
+}
+
 #legend {
 
     display: inline-block;
@@ -26,7 +73,10 @@ body {
     position: relative;
     z-index:99;
 
+    font-family: "amplitudemedium", Helvetica;
+
     height: 250px;
+
     width: 250px;
     background-color: #232323;
 }
@@ -74,11 +124,13 @@ body {
     background: #232323;
     transform: translateY(60%);
     bottom: 0;
-    left: 95px;
+    left: 90px;
     -webkit-border-radius: 0 0 100% 100%;
     -moz-border-radius: 0 0 100% 100%;
     border-radius: 0 0 100% 100%;
     color: #494949;
+
+    font-family: "amplitudecondmedium", Helvetica;
 
     cursor: pointer;
 
@@ -88,5 +140,5 @@ body {
 #legend span {
     position: relative;
     top: 30px;
-    left: 19px;
+    left: 21px;
 }

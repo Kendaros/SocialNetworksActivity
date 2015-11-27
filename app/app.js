@@ -14,8 +14,26 @@ class App {
 
         this.getJSON();
 
-        EventEmitter.on('JSON_LOADED', this.onJsonLoaded.bind(this));
+        $('#begin').on('click', function(){
+            $('#intro').fadeOut();
+            EventEmitter.emit('BEGIN');
+        });
 
+        EventEmitter.on('JSON_LOADED', this.onJsonLoaded.bind(this));
+        EventEmitter.on('BEGIN', this.onBegin.bind(this));
+
+    }
+
+    onBegin() {
+        ‡
+        var tl = new TimelineMax();
+        tl.fromTo(this.layout.calendar.chrono, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john")
+            .fromTo(this.layout.calendar.candidates, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john+=0.5")
+            .fromTo(this.layout.calendar.youtube, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john+=1")
+            .fromTo(this.layout.calendar.vimeo, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john+=1.5")
+            .fromTo(this.layout.calendar.facebook, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john+=2")
+            .fromTo(this.layout.calendar.twitter, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john+=2.5")
+            .fromTo($('#legend'), 1, {y: -250}, {y: 0, ease: Power4.easeOut});
     }
 
     onJsonLoaded() {
@@ -29,7 +47,6 @@ class App {
         root.appendChild(this.scene.renderer.view);
 
         this.drawLayout();
-        //TweenMax.fromTo(this.layout.calendar, 1, {y: -1000}, {y: 0});
 
         this.addListeners();
 
@@ -68,7 +85,7 @@ class App {
         this.DELTA_TIME = Date.now() - this.LAST_TIME;
         this.LAST_TIME = Date.now();
 
-        //this.layout.update();
+        this.layout.update();
 
         this.scene.render();
 

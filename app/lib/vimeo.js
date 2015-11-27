@@ -29,7 +29,7 @@ class Vimeo extends Graphics {
                 };
 
                 var particle = new Particle(options);
-                this.calendar.addChild(particle);
+                this.addChild(particle);
 
             }
             step += 1;

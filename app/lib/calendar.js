@@ -3,6 +3,7 @@ import { Container, Text } from 'pixi.js';
 import Particle from './particle'
 import Date from './date'
 import Chrono from './chrono'
+
 import Candidates from './candidates'
 import Facebook from './facebook'
 import Youtube from './youtube'
@@ -84,7 +85,7 @@ class Calendar extends Container {
 
         this.chrono = new Chrono(options);
         this.addChild(this.chrono);
-        
+
     }
 
     getData() {
@@ -116,6 +117,7 @@ class Calendar extends Container {
         };
 
         this.youtube = new Youtube(options);
+        this.addChild(this.youtube);
 
     }
     drawVimeo() {
@@ -129,6 +131,7 @@ class Calendar extends Container {
         };
 
         this.vimeo = new Vimeo(options);
+        this.addChild(this.vimeo);
 
     }
     drawFacebook() {
@@ -142,6 +145,7 @@ class Calendar extends Container {
         };
 
         this.facebook = new Facebook(options);
+        this.addChild(this.facebook);
 
     }
     drawTwitter() {
@@ -155,6 +159,7 @@ class Calendar extends Container {
         };
 
         this.twitter = new Twitter(options);
+        this.addChild(this.twitter);
 
     }
     drawCandidates() {

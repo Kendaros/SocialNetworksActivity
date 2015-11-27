@@ -13,6 +13,8 @@ class Twitter extends Graphics {
         this.radius = options.radius;
         this.layer = options.layer;
 
+        this.particles = [];
+
         var step = 0;
 
         for (var k = 0; k < this.twitterArray.length; k++) {
@@ -29,7 +31,8 @@ class Twitter extends Graphics {
                 };
 
                 var particle = new Particle(options);
-                this.calendar.addChild(particle);
+                this.addChild(particle);
+                this.particles.push(particle);
 
             }
             step += 1;
