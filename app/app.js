@@ -8,6 +8,8 @@ import $ from 'jquery'
 import Layout from './lib/layout'
 import Particle from './lib/particle'
 
+var beginPristine = true;
+
 class App {
 
     constructor() {
@@ -15,11 +17,19 @@ class App {
         this.getJSON();
 
         this.isReady = false;
+        this.beginPristine = true;
+
 
         $('#begin').on('click', function () {
-            $('#intro').fadeOut(1000);
-            EventEmitter.emit('BEGIN');
+
+            if(beginPristine) {
+                $('#intro').fadeOut(2000);
+                EventEmitter.emit('BEGIN');
+
+                beginPristine = false;
+            }
         });
+
 
         EventEmitter.on('JSON_LOADED', this.onJsonLoaded.bind(this));
         EventEmitter.on('BEGIN', this.onBegin.bind(this));
@@ -49,7 +59,7 @@ class App {
             var tl = new TimelineMax();
             tl.fromTo(this.layout.calendar.chrono, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john")
                 .fromTo(this.layout.calendar.candidates, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john+=0.5")
-                .fromTo($('#legend'), 1, {y: -250}, {y: 0, ease: Power4.easeOut});
+                .fromTo($('#legend'), 2, {y: -250}, {y: 0, ease: Power4.easeOut}, "john+=4");
 
             this.layout.calendar.youtube.moveFromAbove();
             this.layout.calendar.vimeo.moveFromAbove();

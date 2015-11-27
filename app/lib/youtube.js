@@ -40,6 +40,12 @@ class Youtube extends Graphics {
 
     }
 
+    update() {
+        for (let i = 0; i < this.particles.length; i++) {
+            this.particles[i].moveToCenter();
+        }
+    }
+
     moveFromAbove() {
         for (let i = 0; i < this.particles.length; i++) {
             TweenMax.fromTo(this.particles[i], Math.random()*3 + 1, {y: -1000}, {y: this.particles[i].y, ease: Power4.easeOut})

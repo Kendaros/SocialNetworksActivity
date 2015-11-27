@@ -43,6 +43,7 @@ class Layout extends Container {
 
     update() {
         this.calendar.move();
+        //this.calendar.youtube.update();
     }
 
     drawAreas() {

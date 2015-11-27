@@ -24,6 +24,29 @@ class Particle extends Sprite {
         this.blendMode = BLEND_MODES.OVERLAY;
 
     }
+
+    // VORTEX
+    //moveToCenter() {
+    //    const dx = 0 - this.x;
+    //    const dy = 0 - this.y;
+    //    this.angle = Math.atan2( dy, dx ) * ( 180 / Math.PI );
+    //
+    //    this.speed = 1;
+    //
+    //    this.x += Math.sin(this.angle * Math.PI / 180) * this.speed;
+    //    this.y -= Math.cos(this.angle * Math.PI / 180) * this.speed;
+    //}
+
+    moveToCenter() {
+        const dx = 0 - this.x;
+        const dy = 0 - this.y;
+        this.angle = Math.atan2( dy, dx ) * ( 180 / Math.PI );
+
+        this.speed = 0.1;
+
+        this.x += Math.sin(this.angle * Math.PI / 180) * this.speed;
+        this.y += Math.cos(this.angle * Math.PI / 180) * this.speed;
+    }
 }
 
 export default Particle
