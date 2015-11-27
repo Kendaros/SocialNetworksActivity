@@ -3,7 +3,7 @@ import { Sprite } from 'pixi.js';
 class Center extends Sprite {
     constructor(){
 
-        var texture = PIXI.Texture.fromImage("./assets/img/wparticle.png");
+        var texture = PIXI.Texture.fromImage("./assets/img/particle.png");
 
         super(texture);
 
@@ -13,8 +13,8 @@ class Center extends Sprite {
         this.alpha = 0;
 
         this.scale = {
-            x: 1/2,
-            y: 1/2
+            x: 1/3,
+            y: 1/3
         };
 
         this.anchor.x = 0.5;

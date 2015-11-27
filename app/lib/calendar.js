@@ -27,6 +27,7 @@ class Calendar extends Container {
         this.vimeoArray = [];
 
         this.radius = window.innerHeight/5;
+        this.areaRadius = this.radius + 120;
 
         this.layer = 20;
 
@@ -155,6 +156,7 @@ class Calendar extends Container {
         this.addChild(this.twitter);
 
     }
+
     drawCandidates() {
 
         var options = {
@@ -166,119 +168,99 @@ class Calendar extends Container {
 
     }
 
-    drawArea(index) {
-
-        if(index <= 29) {
-            var path = [
-                new PIXI.Point(0,0),
-                new PIXI.Point(Math.sin(-index * (Math.PI * 2) / this.nbMonths + Math.PI) * (this.radius + this.barHeight + 140), Math.cos(-index * (Math.PI * 2) / this.nbMonths + Math.PI) * (this.radius + this.barHeight + 140)),
-                new PIXI.Point(Math.sin(-(index+1) * (Math.PI * 2) / this.nbMonths + Math.PI) * (this.radius + this.barHeight + 140), Math.cos(-(index+1) * (Math.PI * 2) / this.nbMonths + Math.PI) * (this.radius + this.barHeight + 140)),
-                new PIXI.Point(0, 0)
-            ];
-
-            this.drawPolygon(path);
-
-            //this.hitArea = new PIXI.Polygon(path);
-            //this.interactive = true;
-            //
-            //this.touchmove = function(mouseData){
-            //    console.log("MOUSE CLICK ");
-            //}
-        }
-
-
-    }
-
     writeDate(options) {
         this.text = new Date(options);
         this.addChild(this.text);
     }
 
-
     drawAreas() {
 
         this.monthsForArea = [
-            "january",
-            "february",
-            "march",
-            "april",
-            "may",
-            "june",
-            "july",
-            "august",
-            "september",
-            "october",
-            "november",
-            "december",
-            "january",
-            "february",
-            "march",
-            "april",
-            "may",
-            "june",
-            "july",
-            "august",
-            "september",
-            "october",
-            "november",
-            "december",
-            "january",
-            "february",
-            "march",
-            "april",
-            "may",
-            "june",
-            "july",
-            "august",
-            "september",
-            "october",
-            "november",
-            "december",
+            "january 2012",
+            "february 2012",
+            "march 2012",
+            "april 2012",
+            "may 2012",
+            "june 2012",
+            "july 2012",
+            "august 2012",
+            "september 2012",
+            "october 2012",
+            "november 2012",
+            "december 2012",
+            "january 2013",
+            "february 2013",
+            "march 2013",
+            "april 2013",
+            "may 2013",
+            "june 2013",
+            "july 2013",
+            "august 2013",
+            "september 2013",
+            "october 2013",
+            "november 2013",
+            "december 2013",
+            "january 2014",
+            "february 2014",
+            "march 2014",
+            "april 2014",
+            "may 2014",
+            "june 2014",
+            "july 2014",
+            "august 2014",
+            "september 2014",
+            "october 2014",
+            "november 2014",
+            "december 2014"
         ];
 
         for (var i = 0; i < this.nbMonths - 6; i++) {
 
             this.area = new PIXI.Graphics();
 
-            //this.area.facebookArray = this.facebookArray;
-            //this.area.twitterArray = this.twitterArray;
-            //this.area.youtubeArray = this.youtubeArray;
-            //this.area.vimeoArray = this.vimeoArray;
-
             this.area.facebook = Math.floor(this.facebookArray[i] * 100);
             this.area.twitter = Math.floor(this.twitterArray[i] * 100);
             this.area.youtube = Math.floor(this.youtubeArray[i] * 1000);
             this.area.vimeo = Math.floor(this.vimeoArray[i] * 1000);
 
+            if(i < 11) {
+                this.area.candidates = 1181;
+            }
+            else if(i > 11 && i < 23) {
+                this.area.candidates = 1289;
+            }
+            else if(i > 23) {
+                this.area.candidates = 1464;
+            }
+
             this.area.month = this.monthsForArea[i].toUpperCase();
 
             this.area.alpha = 0;
 
-            this.radius = window.innerHeight/3.5 + 40;
             this.barHeight = 30;
 
             //var path = [
             //
-            //    new PIXI.Point(Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140), Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight - (4.5*this.layer))),
-            //    new PIXI.Point(Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140), Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140)),
-            //    new PIXI.Point(Math.sin(-(i+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140), Math.cos(-(i+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight + 140)),
-            //    new PIXI.Point(Math.sin(-(i+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight - (4.5*this.layer)),  Math.cos(-(i+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight - (4.5*this.layer)))
+            //    new PIXI.Point(Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight + 140), Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight - (4.5*this.layer))),
+            //    new PIXI.Point(Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight + 140), Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight + 140)),
+            //    new PIXI.Point(Math.sin(-(i+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight + 140), Math.cos(-(i+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight + 140)),
+            //    new PIXI.Point(Math.sin(-(i+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight - (4.5*this.layer)),  Math.cos(-(i+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight - (4.5*this.layer)))
             //];
 
             this.area.beginFill(0xFFFFFF);
-            this.area.lineStyle(1, 0xFFFFFF);
+            this.area.lineStyle(0.5, 0xFFFFFF);
 
-            //var x0 = Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius - this.barHeight);
-            //var y0 = Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.radius + this.barHeight - (4.5*this.layer));
+            //var x0 = Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius - this.barHeight);
+            //var y0 = Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight - (4.5*this.layer));
             var x0 = 0;
             var y0 = 0;
 
-            var x1 = Math.sin(-i * (Math.PI * 2) / this.nbMonths + Math.PI) * (this.radius + this.barHeight);
-            var y1 = Math.cos(-i * (Math.PI * 2) / this.nbMonths + Math.PI) * (this.radius + this.barHeight);
-            var x2 = Math.sin(-(i+1) * (Math.PI * 2) / this.nbMonths + Math.PI) * (this.radius + this.barHeight);
-            var y2 = Math.cos(-(i+1) * (Math.PI * 2) / this.nbMonths + Math.PI) * (this.radius + this.barHeight);
-            var x3 = Math.sin(-(i+1) * (Math.PI * 2) / this.nbMonths + Math.PI) * (this.radius + this.barHeight - (4.5*this.layer));
-            var y3 = Math.cos(-(i+1) * (Math.PI * 2) / this.nbMonths + Math.PI) * (this.radius + this.barHeight - (4.5*this.layer));
+            var x1 = Math.sin(-i * (Math.PI * 2) / this.nbMonths + Math.PI) * (this.areaRadius + this.barHeight);
+            var y1 = Math.cos(-i * (Math.PI * 2) / this.nbMonths + Math.PI) * (this.areaRadius + this.barHeight);
+            var x2 = Math.sin(-(i+1) * (Math.PI * 2) / this.nbMonths + Math.PI) * (this.areaRadius + this.barHeight);
+            var y2 = Math.cos(-(i+1) * (Math.PI * 2) / this.nbMonths + Math.PI) * (this.areaRadius + this.barHeight);
+            var x3 = Math.sin(-(i+1) * (Math.PI * 2) / this.nbMonths + Math.PI) * (this.areaRadius + this.barHeight - (4.5*this.layer));
+            var y3 = Math.cos(-(i+1) * (Math.PI * 2) / this.nbMonths + Math.PI) * (this.areaRadius + this.barHeight - (4.5*this.layer));
 
             this.area.moveTo(x0, y0);
             this.area.lineTo(x1, y1);
@@ -297,6 +279,7 @@ class Calendar extends Container {
             this.area.hitArea = new PIXI.Polygon(path);
             this.area.mouseover = function(mouseData){
                 this.alpha = 0.1;
+                $('#candidates').html(this.candidates);
                 $('#month').html(this.month);
                 $('#youtube').html(this.youtube);
                 $('#vimeo').html(this.vimeo);
@@ -306,7 +289,6 @@ class Calendar extends Container {
 
             this.area.mouseout = function(mouseData){
                 this.alpha = 0;
-                //console.log(this.facebookArray[0]);
             };
             this.addChild(this.area);
         }

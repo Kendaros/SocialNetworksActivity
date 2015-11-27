@@ -3,7 +3,7 @@ import { Sprite, BLEND_MODES } from 'pixi.js';
 class Particle extends Sprite {
     constructor(options){
 
-        var texture = PIXI.Texture.fromImage("./assets/img/wparticle.png");
+        var texture = PIXI.Texture.fromImage("./assets/img/particle.png");
 
         super(texture);
 

@@ -18,7 +18,7 @@ class Chrono extends Graphics {
                 this.barHeight = 30;
             }
             else{
-                this.lineStyle(0.5, 0xFFFFFF);
+                this.lineStyle(1, 0xFFFFFF);
                 this.barHeight = 10;
             }
 
