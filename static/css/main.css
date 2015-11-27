@@ -89,10 +89,10 @@ body {
 
     font-family: "interstate_lightcondensedRg", Helvetica;
 
-    height: 250px;
+    height: 205px;
 
     width: 250px;
-    background-color: #232323;
+    /*background-color: #232323;*/
 }
 
 #legend ul{
@@ -103,7 +103,7 @@ body {
 }
 
 #legend ul li{
-    padding-top:20px;
+    padding-top:10px;
     list-style-type: none;
     padding-left: 10px;
     margin-left: 5px;
@@ -137,7 +137,7 @@ body {
     position: absolute;
     width: 60px;
     height: 60px;
-    background: #232323;
+    /*background: #232323;*/
     -webkit-transform: translateY(60%);
     transform: translateY(60%);
     bottom: 0;
@@ -153,6 +153,16 @@ body {
 
     z-index:1;
 
+    font-size: 1.2em;
+
+    transition: all ease 0.5s;
+
+    text-transform: uppercase;
+
+}
+
+#legend #button:hover {
+    color: #FFF;
 }
 
 #legend span {
