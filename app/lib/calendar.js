@@ -249,11 +249,11 @@ class Calendar extends Container {
             this.area.hitArea = new PIXI.Polygon(path);
             this.area.mouseover = function(mouseData){
                 this.alpha = 0.1;
-                console.log(this.facebookArray[0]);
+                //console.log(this.facebookArray[0]);
             };
             this.area.mouseout = function(mouseData){
                 this.alpha = 0;
-                console.log(this.facebookArray[0]);
+                //console.log(this.facebookArray[0]);
             };
             this.addChild(this.area);
         }
