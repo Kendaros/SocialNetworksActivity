@@ -241,19 +241,9 @@ class Calendar extends Container {
 
             this.barHeight = 30;
 
-            //var path = [
-            //
-            //    new PIXI.Point(Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight + 140), Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight - (4.5*this.layer))),
-            //    new PIXI.Point(Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight + 140), Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight + 140)),
-            //    new PIXI.Point(Math.sin(-(i+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight + 140), Math.cos(-(i+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight + 140)),
-            //    new PIXI.Point(Math.sin(-(i+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight - (4.5*this.layer)),  Math.cos(-(i+1) * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight - (4.5*this.layer)))
-            //];
-
             this.area.beginFill(0xFFFFFF);
             this.area.lineStyle(0.5, 0xFFFFFF);
 
-            //var x0 = Math.sin(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius - this.barHeight);
-            //var y0 = Math.cos(-i * (Math.PI * 2) / this.nb + Math.PI) * (this.areaRadius + this.barHeight - (4.5*this.layer));
             var x0 = 0;
             var y0 = 0;
 

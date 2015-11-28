@@ -27,7 +27,7 @@ class Facebook extends Graphics {
 
                     x: Math.sin(-(j) *(Math.PI * 2) / ((this.nbMonths*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (3*this.layer) - Math.random()*20),
                     y: Math.cos(-(j) *(Math.PI * 2) / ((this.nbMonths*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (3*this.layer) - Math.random()*20),
-                    color: 0xf800ff
+                    color: 0x000DB2
                 };
 
                 var particle = new Particle(options);

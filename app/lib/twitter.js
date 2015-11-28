@@ -27,7 +27,7 @@ class Twitter extends Graphics {
 
                     x: Math.sin(-(j) *(Math.PI * 2) / ((this.nbMonths*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (4.5*this.layer) - Math.random()*20),
                     y: Math.cos(-(j) *(Math.PI * 2) / ((this.nbMonths*this.nbPoints))+ Math.PI - step*Math.PI/18) * (this.radius - (4.5*this.layer) - Math.random()*20),
-                    color: 0x6f00ff
+                    color: 0x00B7FF
                 };
 
                 var particle = new Particle(options);

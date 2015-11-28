@@ -110,19 +110,19 @@ body {
 }
 
 #legend ul li:nth-child(1) {
-    list-style-image: url('../assets/img/1_dotRed.png');
+    list-style-image: url('../assets/img/1_redDot.svg');
 }
 
 #legend ul li:nth-child(2) {
-    list-style-image: url('../assets/img/2_dotTurquoise.png');
+    list-style-image: url('../assets/img/2_turquoiseDot.svg');
 }
 
 #legend ul li:nth-child(3) {
-    list-style-image: url('../assets/img/3_dotPink.png');
+    list-style-image: url('../assets/img/3_darkBlueDot.svg');
 }
 
 #legend ul li:nth-child(4) {
-    list-style-image: url('../assets/img/4_dotViolet.png');
+    list-style-image: url('../assets/img/4_lightBlueDot.svg');
 }
 
 #legend ul li:nth-child(5) {
@@ -184,6 +184,22 @@ body {
 
 #stats table td{
     width: 160px;
+}
+
+#stats #youtube-color {
+    color: #ee515d;
+}
+
+#stats #vimeo-color {
+    color: #00f3e8;
+}
+
+#stats #facebook-color {
+    color: #000DB2;
+}
+
+#stats #twitter-color {
+    color: #00B7FF;
 }
 
 .align-right {
