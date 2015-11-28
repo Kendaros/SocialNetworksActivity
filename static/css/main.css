@@ -133,10 +133,11 @@ body {
 }
 
 #legend ul li:nth-child(5) {
-    background: url('../assets/img/5_stripes.png') no-repeat 0px 3px;
-    padding: 0 0 0 28px;
+    background: url('../assets/img/5_whiteStripes.svg') no-repeat 0px 4px;
+    background-size: 8px;
+    padding: 0 0 0 24px;
     margin-top: 15px;
-    margin-left: -15px;
+    margin-left: -10px;
     line-height: 30px;
 }
 
