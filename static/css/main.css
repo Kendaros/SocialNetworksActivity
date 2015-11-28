@@ -89,7 +89,7 @@ body {
 
     font-family: "interstate_lightcondensedRg", Helvetica;
 
-    height: 205px;
+    height: 175px;
 
     width: 250px;
     /*background-color: #232323;*/
@@ -103,32 +103,39 @@ body {
 }
 
 #legend ul li{
-    padding-top:10px;
     list-style-type: none;
-    padding-left: 10px;
-    margin-left: 5px;
+
+    padding: 0 0 0 24px;
+    margin-left: -10px;
+    line-height: 23px;
 }
 
 #legend ul li:nth-child(1) {
-    list-style-image: url('../assets/img/1_redDot.svg');
+    background: url('../assets/img/1_redDot.svg') no-repeat 0;
+    background-size: 8px;
 }
 
 #legend ul li:nth-child(2) {
-    list-style-image: url('../assets/img/2_turquoiseDot.svg');
+    background: url('../assets/img/2_turquoiseDot.svg') no-repeat 0;
+    background-size: 8px;
+
 }
 
 #legend ul li:nth-child(3) {
-    list-style-image: url('../assets/img/3_darkBlueDot.svg');
+    background: url('../assets/img/3_darkBlueDot.svg') no-repeat 0;
+    background-size: 8px;
+
 }
 
 #legend ul li:nth-child(4) {
-    list-style-image: url('../assets/img/4_lightBlueDot.svg');
+    background: url('../assets/img/4_lightBlueDot.svg') no-repeat 0;
+    background-size: 8px;
 }
 
 #legend ul li:nth-child(5) {
     background: url('../assets/img/5_stripes.png') no-repeat 0px 3px;
     padding: 0 0 0 28px;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-left: -15px;
     line-height: 30px;
 }
