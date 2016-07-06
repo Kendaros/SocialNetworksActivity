@@ -5,6 +5,7 @@
 
 body {
     font-family: "interstate_lightcondensedRg", Helvetica, Arial;
+    overflow: hidden;
 }
 
 #intro {
@@ -34,11 +35,8 @@ body {
 
 #intro #begin {
     font-family: "interstate_lightcondensedRg", Helvetica;
-    position: relative;
-    top: 45%;
-
     display: block;
-    margin: 0 auto;
+    margin: 30px auto 0 auto;
     height: 30px;
     line-height: 30px;
     width: 100px;
@@ -64,8 +62,15 @@ body {
 }
 
 #intro #title {
-    position: relative;
-    top: 35%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 #legend {
