@@ -58,7 +58,7 @@ class App {
             var tl = new TimelineMax();
             tl.fromTo(this.layout.calendar.chrono, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john")
                 .fromTo(this.layout.calendar.candidates, 1, {y: -1000}, {y: 0, ease: Power4.easeOut}, "john+=0.5")
-                .fromTo($('#legend'), 2, {y: -160}, {y: 0, ease: Power4.easeOut}, "john+=4");
+                .fromTo($('#legend'), 2, {y: -200}, {y: 0, ease: Power4.easeOut}, "john+=4");
 
             this.layout.calendar.youtube.moveFromAbove();
             this.layout.calendar.vimeo.moveFromAbove();
