@@ -16,16 +16,19 @@ class App {
         this.isReady = false;
         this.beginPristine = true;
 
+        this.withIntro = true;
 
-        $('#begin').on('click', function () {
+        if(this.withIntro) {
+            $('#begin').on('click', function () {
 
-            if(beginPristine) {
-                $('#intro').fadeOut(2000);
-                EventEmitter.emit('BEGIN');
+                if(beginPristine) {
+                    $('#intro').fadeOut(2000);
+                    EventEmitter.emit('BEGIN');
 
-                beginPristine = false;
-            }
-        });
+                    beginPristine = false;
+                }
+            });
+        }
 
         EventEmitter.on('JSON_LOADED', this.onJsonLoaded.bind(this));
         EventEmitter.on('BEGIN', this.onBegin.bind(this));
@@ -70,8 +73,10 @@ class App {
 
     onJsonLoaded() {
         this.isReady = true;
-        // $('#intro').fadeOut(2000);
-        // EventEmitter.emit('BEGIN');
+        if(!this.withIntro) {
+            $('#intro').fadeOut(2000);
+            EventEmitter.emit('BEGIN');
+        }
     }
 
     /**
