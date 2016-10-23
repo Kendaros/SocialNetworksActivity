@@ -30,6 +30,11 @@ class Layout extends Container {
         this.center.update();
     }
 
+    resize() {
+        this.x = window.innerWidth / 2;
+        this.y = window.innerHeight / 2;
+    }
+
 
 
 }

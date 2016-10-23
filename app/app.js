@@ -1,12 +1,9 @@
-import Dat from 'dat-gui';
 import Scene from './scene/scene';
 import { Graphics } from 'pixi.js';
-import NumberUtils from './utils/number-utils';
 import EventEmitter from './lib/event-emitter'
 import $ from 'jquery'
 
 import Layout from './lib/layout'
-import Particle from './lib/particle'
 
 var beginPristine = true;
 
@@ -29,7 +26,6 @@ class App {
                 beginPristine = false;
             }
         });
-
 
         EventEmitter.on('JSON_LOADED', this.onJsonLoaded.bind(this));
         EventEmitter.on('BEGIN', this.onBegin.bind(this));
@@ -67,13 +63,15 @@ class App {
             this.layout.calendar.facebook.moveFromAbove();
         }
         else {
-            window.setTimeout(this.onBegin, 400).bind(this);
+            window.setTimeout(this.onBegin.bind(this), 400);
         }
 
     }
 
     onJsonLoaded() {
         this.isReady = true;
+        // $('#intro').fadeOut(2000);
+        // EventEmitter.emit('BEGIN');
     }
 
     /**
@@ -134,6 +132,8 @@ class App {
         this.height = window.innerHeight;
 
         this.scene.resize(this.width, this.height);
+
+        this.layout.resize();
 
     }
 
